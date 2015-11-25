@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uppcl.dvvnl.combingapp.ImportMasterFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Please import here Master Data"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/import_message"/>
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:id="@+id/fil_picker"
+    android:layout_below="@id/import_message"
+    android:hint=" Select MasterData"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fil_picker"
+        android:layout_below="@id/import_message"
+        android:id="@+id/import_Button"
+        android:layout_marginTop="10dp"
+android:layout_marginLeft="10dp"
+       android:text="Browse" />
+
+
+
+</RelativeLayout>

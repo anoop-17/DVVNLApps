@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.uppcl.dvvnl.combingapp.AddHTConsumerActivity">
+
+    <EditText
+        android:id="@+id/add_et_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="ACCOUNT ID"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/add_et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="Consumer Name"
+        android:inputType="textCapWords" />
+    <EditText
+        android:id="@+id/add_et_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Load In KVA"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/add_et_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="MAIN METER"
+        android:inputType="textCapWords" />
+    <EditText
+        android:id="@+id/add_et_main_mf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Main Meter MF"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/add_et_pole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="POLE METER"
+        android:inputType="textCapWords" />
+    <EditText
+        android:id="@+id/add_et_pole_mf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="POLE Meter MF"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/add_et_process"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Process"
+        android:inputType="textCapWords" />
+
+
+
+    <Button
+        android:id="@+id/add_bt_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE" />
+</LinearLayout>
+

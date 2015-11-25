@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.uppcl.dvvnl.combingapp.SelectPoleActivity">
+
+    <TextView
+        android:id="@+id/text_substation"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+
+        android:text="Select Substation" />
+
+    <Spinner
+        android:id="@+id/sp_substation"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+
+        android:layout_toRightOf="@+id/text_substation" />
+
+    <Button
+        android:id="@+id/bt_add_substation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/sp_substation"
+        android:text="New Substation" />
+
+    <TextView
+        android:id="@+id/text_feeder"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/text_substation"
+        android:layout_centerHorizontal="true"
+        android:text="Select Feeder" />
+
+    <Spinner
+        android:id="@+id/sp_feeder"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/sp_substation"
+        android:layout_toRightOf="@+id/text_feeder" />
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:id="@+id/bt_add_feeder"
+    android:layout_below="@+id/bt_add_substation"
+    android:layout_toRightOf="@+id/sp_feeder"
+    android:text="New Feeder"
+    />
+    <TextView
+        android:id="@+id/text_transformer"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/text_feeder"
+        android:layout_centerHorizontal="true"
+        android:text="Select Transformer" />
+
+    <Spinner
+        android:id="@+id/sp_transformer"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/sp_feeder"
+        android:layout_toRightOf="@+id/text_transformer" />
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/bt_add_transformer"
+    android:layout_below="@+id/bt_add_feeder"
+    android:layout_toRightOf="@+id/sp_transformer"/>
+    <TextView
+        android:id="@+id/text_pole"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/text_transformer"
+        android:layout_centerHorizontal="true"
+        android:text="Select Pole" />
+
+    <Spinner
+        android:id="@+id/sp_pole"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/sp_transformer"
+        android:layout_centerHorizontal="true"
+
+        android:layout_toRightOf="@+id/text_pole" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_add_pole"
+        android:layout_below="@+id/bt_add_transformer"
+        android:layout_toRightOf="@+id/sp_pole"/>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/combing" android:icon="@android:drawable/ic_menu_camera"
+            android:title="Combing " />
+        <item android:id="@+id/ht_reading" android:icon="@android:drawable/ic_menu_gallery"
+            android:title="HT Reading" />
+        <item android:id="@+id/import_master" android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="Import Master" />
+        <item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_manage"
+            android:title="Tools" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/query_builder" android:icon="@android:drawable/ic_menu_share"
+                android:title="Query Tester" />
+            <item android:id="@+id/import_gis" android:icon="@android:drawable/ic_menu_send"
+                android:title="Import GIS" />
+        </menu>
+    </item>
+
+</menu>

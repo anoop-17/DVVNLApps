@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ht_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_alignParentTop="true"
+    android:fillViewport="true"
+    tools:context="com.uppcl.dvvnl.combingapp.HTMeteringActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ht_ll_export"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <Button
+                android:id="@+id/ht_bt_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD CONSUMER" />
+
+            <Button
+                android:id="@+id/ht_bt_export"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Export Report" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ht_ll_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ht_ll_export">
+
+            <EditText
+                android:id="@+id/ht_et_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Account ID"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/ht_bt_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ht_rl_editor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ht_ll_account">
+
+            <LinearLayout
+                android:id="@+id/ht_ll_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/ht_sp_previous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    />
+
+                <Spinner
+                    android:id="@+id/ht_sp_meters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:id="@+id/ht_sp_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:id="@+id/ht_sp_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/ht_et_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:hint="DD-MM-YYYY hh:mm"
+                    android:inputType="datetime" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ht_ll_kwh"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ht_ll_spinner"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="KWH" />
+
+                <EditText
+                    android:id="@+id/ht_et_kwh_import"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Import"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusRight="@+id/ht_et_kwh_export"
+                    android:selectAllOnFocus="true" />
+
+
+                <TextView
+                    android:id="@+id/temptv_1"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="/" />
+
+                <EditText
+                    android:id="@+id/ht_et_kwh_export"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Export"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvarh_import"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+            <!--  Input Main Meter Readings  KVARH-->
+            <LinearLayout
+                android:id="@+id/ht_ll_kvarh"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ht_ll_kwh">
+
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="KVARH" />
+
+                <EditText
+                    android:id="@+id/ht_et_kvarh_import"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Import"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvarh_export"
+                    android:selectAllOnFocus="true" />
+
+
+                <TextView
+                    android:id="@+id/temptv_3"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="/" />
+
+                <EditText
+                    android:id="@+id/ht_et_kvarh_export"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Export"
+                    android:imeOptions="actionNext"
+
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_import"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+
+            <!--  Input Main Meter Readings  KVAH-->
+            <LinearLayout
+                android:id="@+id/ht_ll_kvah"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ht_ll_kvarh">
+
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="KVAH" />
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_import"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Import"
+
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_export"
+                    android:selectAllOnFocus="true" />
+
+
+                <TextView
+                    android:id="@+id/temptv_2"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="/" />
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_export"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:hint="Export"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+
+                    android:nextFocusForward="@+id/ht_et_UC_import"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+
+
+            <!--  Input Main Meter Readings  UC-->
+            <LinearLayout
+                android:id="@+id/ht_ll_uc"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ht_ll_kvah">
+
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="UC" />
+
+                <EditText
+                    android:id="@+id/ht_et_UC_import"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Import"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_UC_export"
+                    android:selectAllOnFocus="true" />
+
+
+                <TextView
+                    android:id="@+id/temptv_4"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="/" />
+
+                <EditText
+                    android:id="@+id/ht_et_UC_export"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:hint="Export"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_cmd_import"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+            <!--  Input Main Meter Readings  CMD-->
+            <LinearLayout
+                android:id="@+id/ht_ll_cmd"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ht_ll_uc">
+
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="CMD" />
+
+                <EditText
+                    android:id="@+id/ht_et_cmd_import"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Import"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_cmd_export"
+                    android:selectAllOnFocus="true" />
+
+
+                <TextView
+                    android:id="@+id/temptv_5_a"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="/" />
+
+                <EditText
+                    android:id="@+id/ht_et_cmd_export"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Export"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_UHI_import"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+            <!--  Input Main Meter Readings  UHI-->
+            <LinearLayout
+                android:id="@+id/ht_ll_uhi"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ht_ll_cmd">
+
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="UHI" />
+
+                <EditText
+                    android:id="@+id/ht_et_UHI_import"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Import"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_UHI_export"
+                    android:selectAllOnFocus="true" />
+
+
+                <TextView
+                    android:id="@+id/temptv_5"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="/" />
+
+                <EditText
+                    android:id="@+id/ht_et_UHI_export"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Export"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_bill"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+            <!--  Input Main Meter Readings  Bill-->
+            <LinearLayout
+                android:id="@+id/ht_ll_bill"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ht_ll_uhi">
+
+
+                <TextView
+                    android:id="@+id/ht_tv_bill"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Bills" />
+
+                <EditText
+                    android:id="@+id/ht_et_bill"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Bills"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/ht_et_pf"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+            <!--  Input Main Meter Readings  PF-->
+            <LinearLayout
+                android:id="@+id/ht_ll_pf"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ht_ll_bill">
+
+
+                <TextView
+                    android:id="@+id/ht_tv_pf"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="PF" />
+
+                <EditText
+                    android:id="@+id/ht_et_pf"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="PF"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_Voltage_r"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+            <!--  Input Main Meter Readings  Voltage-->
+            <LinearLayout
+                android:id="@+id/ht_ll_voltage"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ht_ll_pf">
+
+
+                <TextView
+                    android:id="@+id/ht_tv_voltage"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="KV" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_Voltage_r"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="r"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_Voltage_y"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_Voltage_y"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="y"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_Voltage_b"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_Voltage_b"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="B"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_current_r"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+            <!--  Input Main Meter Readings  Current-->
+            <LinearLayout
+                android:id="@+id/ht_ll_current"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ht_ll_voltage">
+
+
+                <TextView
+                    android:id="@+id/ht_tv_current"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="A" />
+
+                <EditText
+                    android:id="@+id/ht_et_current_r"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="r"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_current_y"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_current_y"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="y"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_current_b"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_current_b"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:hint="B"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_segment1"
+
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+            <!--Segments -->
+            <LinearLayout
+                android:id="@+id/ht_viewBottom"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ht_ll_current"
+                android:orientation="vertical"
+                android:selectAllOnFocus="true">
+
+                <TextView
+                    android:id="@+id/ht_tv_segment"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="KWH" />
+
+                <EditText
+                    android:id="@+id/ht_et_segment1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 1"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_segment2"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_segment2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 2"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_segment3"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_segment3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 3"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_segment4"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_segment4"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 4"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_segment5"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_segment5"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 5"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_segment6"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_segment6"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 6"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_segment7"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_segment7"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 7"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_segment8"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_segment8"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 8"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_segment1"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ht_viewBottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ht_tv_kvah_segment"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="   KVAH" />
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_segment1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 1"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_segment2"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_segment2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 2"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_segment3"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_segment3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 3"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_segment4"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_segment4"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 4"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_segment5"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_segment5"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 5"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_segment6"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_segment6"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 6"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_segment7"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_segment7"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 7"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_kvah_segment8"
+                    android:selectAllOnFocus="true" />
+
+
+                <EditText
+                    android:id="@+id/ht_et_kvah_segment8"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Segment 8"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:nextFocusForward="@+id/ht_et_seal"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+
+
+                    android:id="@+id/ht_et_seal"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ht_viewBottom"
+                    android:hint="Sealing No."
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:nextFocusForward="@+id/ht_bt_save"
+                    android:selectAllOnFocus="true" />
+
+
+            </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" android:layout_below="@+id/view2"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/ht_bt_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Save" />
+
+
+    <Button
+        android:id="@+id/ht_bt_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="RESET" />
+
+    <Button
+        android:id="@+id/ht_bt_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="UPDATE" />
+</LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
+
